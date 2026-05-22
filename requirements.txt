@@ -4,4 +4,5 @@ celery
 redis
 gitpython
 python-multipart
+aiofiles
 pytest

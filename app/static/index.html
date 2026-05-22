@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jota APK Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jota APK Builder</h1>
+            <p>Transform your Git repository into an APK</p>
+        </header>
+
+        <main>
+            <section class="build-form">
+                <div class="input-group">
+                    <input type="url" id="repo-url" placeholder="https://github.com/user/repo" required>
+                    <button id="build-btn">Start Build</button>
+                </div>
+            </section>
+
+            <section id="status-section" class="hidden">
+                <div class="status-card">
+                    <div class="status-header">
+                        <span id="task-id-label">Task ID: <span id="task-id">-</span></span>
+                        <span id="status-badge" class="badge">PENDING</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <div id="download-container" class="hidden">
+                        <a id="download-link" href="#" class="btn-download">Download APK</a>
+                    </div>
+                </div>
+
+                <div class="logs-container">
+                    <h3>Build Logs</h3>
+                    <pre id="logs-console">Waiting for logs...</pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Jota APK Builder</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
