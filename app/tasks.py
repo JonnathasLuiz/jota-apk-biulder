@@ -6,7 +6,7 @@ from pathlib import Path
 from git import Repo
 from .worker import celery_app
 
-STORAGE_DIR = Path("storage/apks")
+STORAGE_DIR = Path(os.getenv("STORAGE_PATH", "storage/apks"))
 STORAGE_DIR.mkdir(parents=True, exist_ok=True)
 
 def _build_apk_logic(self, repo_url: str):
