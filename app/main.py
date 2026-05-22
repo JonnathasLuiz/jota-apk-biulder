@@ -2,6 +2,7 @@ import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, HttpUrl
 from pathlib import Path
 from .worker import celery_app
@@ -78,6 +79,8 @@ async def download_apk(task_id: str):
         filename=f"{task_id}.apk",
         media_type="application/vnd.android.package-archive"
     )
+
+app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
