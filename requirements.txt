@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-celery
-redis
-gitpython
-python-multipart
-pytest
